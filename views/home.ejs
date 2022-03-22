@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title><%-title%></title>
+  <link rel="icon" href="icon.png" type="image/png" sizes="16x16">
+  <!-- CDN de los íconos -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- CDN Materialize CSS  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <!-- AQUI EL CONTENIDO DEL SITIO -->
+	<div class="navbar-fixed">
+	  <nav class="black">
+		<div class="nav-wrapper">
+		  <div class="container">
+			<a href="#" class="brand-logo"><%-title%></a>
+			<a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+			  <li><a href="#">Menu 1</a></li>
+			  <li><a href="#">Menu 2</a></li>
+			  <li><a href="#">Menu 3</a></li>
+			  <li><a href="#">Menu 4</a></li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+	</div>
+	<ul class="side-nav" id="mobile-menu">
+	  <li><a href="#">Menu 1</a></li>
+	  <li><a href="#">Menu 2</a></li>
+	  <li><a href="#">Menu 3</a></li>
+	  <li><a href="#">Menu 4</a></li>
+	</ul>
+	<!-- $(".button-collapse").sideNav(); -->
+	<div class="container">
+		<div class="row">
+			<%for(var i = 0; i < products.length; i++){%>
+			
+				<div class="card">
+					<div class="card-image waves-effect waves-block waves-light">
+					  	<img class="activator" src="https://pos.loginweb.dev/storage/<%-products[i].image%>">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4">
+							<%-products[i].name%>
+							<i class="material-icons right">more_vert</i>
+						</span>
+						<p>Precio: <%-products[i].precio%> Bs.</p>
+					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4"><%-products[i].name%><i class="material-icons right">close</i></span>
+						<p><%-products[i].description%></p>
+						<p>Precio: <%-products[i].precio%> Bs.</p>
+						<p>Categoria: <%-products[i].categoria%></p>
+					</div>
+				</div>
+			
+			<%}%>
+		</div>
+	</div>
+  <!--  CDN jQuery -->
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <!-- CDN Materialize JS  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  
+  <script>
+	$("document").ready(function () {
+	  
+	});
+  </script>
+</body>
+
+</html>
